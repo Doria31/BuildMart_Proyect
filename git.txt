@@ -1,0 +1,14 @@
+git init
+git add .
+git config usar.name ""
+git config usar.email ""
+git commit -m "Primer commit"
+git branch -M main
+git remote add origin https://github.com/Doria31/api_2821726.git
+git push -u origin main
+
+Actualizar el repositorio
+
+git pull
+git add .
+git commit -m "Actualización de Repositorio"
