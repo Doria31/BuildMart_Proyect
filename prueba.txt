@@ -1,0 +1,53 @@
+METHODS 
+
+GET:
+
+Shoppings: http://127.0.0.1:3000/api/shopping
+Sales: http://127.0.0.1:3000/api/sales
+
+POST/PUT: 
+
+Shoppings: 
+
+  {
+    "nit": "1067161502",
+    "supplier": "Proveedor",
+    "date": "2024-09-10",
+    "products": [
+      {
+        "name": "Argos x50kg Gris",
+        "amount": 2,
+        "price": 33000
+      },
+      {
+        "name": "Argos Blanco x50kg",
+        "amount": 3,
+        "price": 40000
+      }
+    ]
+  }
+
+Sales:
+
+  {
+    "customer": "Miguel Doria",
+    "date": "2024-09-10",
+    "products": [
+      {
+        "name": "Argos x50kg Gris",
+        "amount": 2,
+        "price": 33000
+      },
+      {
+        "name": "Argos Blanco x50kg",
+        "amount": 3,
+        "price": 40000
+      }
+    ]
+  }
+
+DELETE:
+
+Shopping/Sales: http://127.0.0.1:3000/api/sales/{id}
+
+

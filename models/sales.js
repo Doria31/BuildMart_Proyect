@@ -17,15 +17,8 @@ const productSchema = new mongoose.Schema({
 }
 });
 
-const shoppingSchema = new mongoose.Schema({
-  nit: { 
-      type: String, 
-      required: [true],
-      maxlength:[10,'Maximo 30 caracteres'],
-      minlength:[10, 'Minimo 3 caracteres'],
-      unique: [true]
-  },
-  supplier: { 
+const saleSchema = new mongoose.Schema({
+  customer: { 
     type: String, 
     maxlength:[40,'Maximo 40 caracteres'],
     minlength:[5, 'Minimo 5 caracteres'],
@@ -44,6 +37,6 @@ const shoppingSchema = new mongoose.Schema({
 }
 });
 
-const Shopping = mongoose.model('Shopping', shoppingSchema);
+const Sale = mongoose.model('Sale', saleSchema);
 
-module.exports = Shopping
+module.exports = Sale
