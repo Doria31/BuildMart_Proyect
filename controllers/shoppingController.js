@@ -91,7 +91,7 @@ const putShopping = async (req, res) => {
 
   try {
     // Buscar y actualizar la compra
-    const getShopping = await findByIdAndUpdate(
+    const getShopping = await Shopping.findByIdAndUpdate(
       id,
       { supplier, nit, products, total, date},
       { new: true, runValidators: true } // `new: true` para devolver el documento actualizado

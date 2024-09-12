@@ -37,7 +37,7 @@ Sales:
         "name": "Argos x50kg Gris",
         "amount": 2,
         "price": 33000
-      },
+      },  
       {
         "name": "Argos Blanco x50kg",
         "amount": 3,

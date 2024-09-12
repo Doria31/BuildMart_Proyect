@@ -71,7 +71,7 @@ const putSale = async (req, res) => {
   
     try {
       // Buscar y actualizar la compra
-      const getSale = await findByIdAndUpdate(
+      const getSale = await Sale.findByIdAndUpdate(
         id,
         { customer, products, total, date },
         { new: true, runValidators: true } // `new: true` para devolver el documento actualizado
