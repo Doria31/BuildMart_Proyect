@@ -3,6 +3,8 @@ const dbConnect = require('../database/config')
 require('../database/config')
 const {getShopping, postShopping, putShopping, deleteShopping} = require('../controllers/shoppingController')
 const {getSale, postSale, putSale, deleteSale} = require('../controllers/salesController')
+const { getCat, postCat, putCat, deleteCat } =  require('../controllers/catController')
+const { getProv, postProv, putProv, deleteProv } =  require('../controllers/provController')
 const cors = require('cors')
 
 class Server{
@@ -12,6 +14,8 @@ class Server{
         this.dbConecction()
         this.pathShopping = '/api/shopping' 
         this.pathSale = '/api/sales'
+        this.pathCat = '/api/catproveedores'
+        this.pathProv = '/api/proveedores'
         this.route()
     }
 
@@ -33,7 +37,16 @@ class Server{
         this.app.post(this.pathSale, postSale)
         this.app.put(this.pathSale+'/:id',putSale)
         this.app.delete(this.pathSale+'/:id', deleteSale)
-
+        //METHODS CATEGORIA DE PROVEEDORES
+        this.app.get(this.pathCat, getCat) 
+        this.app.post(this.pathCat, postCat)
+        this.app.put(this.pathCat+'/:id',putCat)
+        this.app.delete(this.pathCat+'/:id', deleteCat)
+        //METHODS PROVEEDORES
+        this.app.get(this.pathProv, getProv) 
+        this.app.post(this.pathProv, postProv)
+        this.app.put(this.pathProv+'/:id',putProv)
+        this.app.delete(this.pathProv+'/:id', deleteProv)
     }
 
     listen(){

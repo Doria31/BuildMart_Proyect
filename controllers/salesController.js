@@ -2,7 +2,7 @@ const Sale = require('../models/sales')
 
 const getSale = async (req, res) => {
     try {
-      const sale = await Sale.find();
+      const sale = await find();
       res.json(sale);
     } catch (err) {
       res.status(500).json({ message: err.message });
@@ -71,7 +71,7 @@ const putSale = async (req, res) => {
   
     try {
       // Buscar y actualizar la compra
-      const getSale = await Sale.findByIdAndUpdate(
+      const getSale = await findByIdAndUpdate(
         id,
         { customer, products, total, date },
         { new: true, runValidators: true } // `new: true` para devolver el documento actualizado
@@ -98,7 +98,7 @@ const deleteSale = async(req, res) => {
     let msg = 'Compra eliminada'
     id = req.params.id
     try {
-        await Sale.findByIdAndDelete({_id: id})
+        await findByIdAndDelete({_id: id})
     } catch (error) {
         msg = 'There was a problem while deleting'
     }
