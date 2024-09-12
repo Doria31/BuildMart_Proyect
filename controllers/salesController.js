@@ -95,14 +95,14 @@ const putSale = async (req, res) => {
 
 
 const deleteSale = async(req, res) => {
-    let msg = 'Compra eliminada'
-    id = req.params.id
-    try {
-        await findByIdAndDelete({_id: id})
-    } catch (error) {
-        msg = 'There was a problem while deleting'
-    }
-    res.json({msg:msg})
+  let msg = 'Compra eliminada'
+  id = req.params.id
+  try {
+      await Sale.findByIdAndDelete({_id: id})
+  } catch (error) {
+      msg = 'There was a problem while deleting'
+  }
+  res.json({msg:msg})
 }
 
 module.exports = {
