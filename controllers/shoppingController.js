@@ -118,7 +118,7 @@ const deleteShopping = async(req, res) => {
   let msg = 'Compra eliminada'
   id = req.params.id
   try {
-      await Sale.findByIdAndDelete({_id: id})
+      await Shopping.findByIdAndDelete({_id: id})
   } catch (error) {
       msg = 'There was a problem while deleting'
   }
