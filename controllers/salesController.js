@@ -2,7 +2,7 @@ const Sale = require('../models/sales')
 
 const getSale = async (req, res) => {
     try {
-      const sale = await find();
+      const sale = await Sale.find();
       res.json(sale);
     } catch (err) {
       res.status(500).json({ message: err.message });
